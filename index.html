@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var h = document.createElement('header');
+            //now add class selector
+            h.setAttribute('class',"r_header");
+            var m = document.createElement('div');
+            var f = document.createElement('footer');
+            
+            console.log(h);
+            console.log(m);
+            console.log(f);
+
+            document.body.appendChild(h);
+            document.body.appendChild(m);
+            // now add the class attr to div
+            document.querySelector('header.r_header ~ div').setAttribute('class','r_main');
+            
+            var x = document.getElementsByClassName('r_main');
+            console.log(x[0]);
+            x[0].style.color= 'red';
+            // it will return a collection [] Array
+
+            document.body.appendChild(f);
+
+            h.innerHTML = 'header';
+            document.querySelector('div').innerHTML = 'main area';
+
+            var fe = document.querySelector('div ~ footer');
+            fe.innerHTML = 'footer';
+            //document.querySelector('div ~ footer').innerHTML = 'footer';
+
+            //create the button
+            var b = document.createElement('button');
+            b.innerHTML = 'click Me!'
+            console.log(b)
+            fe.appendChild(b);
+
+            var be = document.getElementsByTagName('button');
+            //document.getElementsByTagName('button');
+            console.log(be[0]);
+
+            //Element.addEventListener(event,funtion,useCapture)
+            be[0].addEventListener('click',function(){
+                alert('click button');
+                h.style.color = 'green';
+            
+            });
+          
+
+
+
+
+        </script>
+    </body>
+</html>
